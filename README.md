@@ -200,3 +200,4 @@ Truy cập lại Node-RED
 
 # 5 Tạo API Backend: Dùng các node http in → function → MSSQL → http response để truy vấn và trả JSON về client.
 
+Tại giao diện Nodered - Flow1: Thực hiện kéo thả các node như sau: http in, http response, MSSQL, function

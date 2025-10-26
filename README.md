@@ -47,6 +47,7 @@ Gõ lệnh:iisreset /stop
    "D:\Apache24\nguyentienthang"
    
    <img width="1020" height="230" alt="image" src="https://github.com/user-attachments/assets/5415fdc9-4873-4ee0-bc16-c0a69e2416f5" />
+   
  D:\Apache24\conf\httpd.conf
 DocumentRoot "D:/Apache24/htdocs"
 
@@ -57,5 +58,73 @@ DocumentRoot "D:/Apache24/htdocs"
 Bỏ dấu # dòng VirtualHost
 
 <img width="846" height="507" alt="image" src="https://github.com/user-attachments/assets/c6de1888-e701-40aa-a117-57c7c71655c9" />
+
  sau đó tại D:Apache24\conf\extra\httpd-vhosts.conf.
+ thêm 
+ 
+ <VirtualHost *:80>
+    ServerAdmin admin@nguyentienthang.com
+    DocumentRoot "D:/Apache24/nguyentienthang"
+    ServerName nguyentienthang.com
+    ErrorLog "logs/nguyentienthang-error.log"
+    CustomLog "logs/nguyentienthang-access.log" common
+
+    <Directory "D:/Apache24/nguyentienthang">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+<img width="1586" height="990" alt="image" src="https://github.com/user-attachments/assets/7987f05e-2db8-4f40-8cae-ab0fb9e22fb2" />
+
+6 Thêm domain vào file hosts
+
+ C:\Windows\System32\drivers\etc\hosts 
+ -- Thêm dòng cuối : 127.0.0.1   nguyentienthang.com
+ 
+<img width="818" height="236" alt="image" src="https://github.com/user-attachments/assets/167404f2-b3d6-4a8f-9db0-2dfa9e6a97e1" />
+
+7 Thao tác dòng lệnh trên file D:\Apache24\bin\httpd.exe
+
+ mở ADMIN và chạy
+ 
+ D:\Apache24\bin\httpd.exe -k install
+ 
+D:\Apache24\bin\httpd.exe -k start
+
+  thêm code html -- chạy 
+  
+  <img width="736" height="272" alt="image" src="https://github.com/user-attachments/assets/9c6db982-7194-4ca1-98ad-0e6f760c89ff" />
+
+  # 2. Cài đặt nodejs và nodered => Dùng làm backend.
+  
+ 2.1 Cài Node.js
+ 
+1️⃣ Tải file cài đặt Node.js (phiên bản ổn định được yêu cầu):
+
+👉 https://nodejs.org/dist/v20.19.5/node-v20.19.5-x64.msi
+
+ 2.Tải NSSM
+ 
+ Gải nén vào  "D:\nodejs\nodered" giữ lại  "D:\nodejs\nodered\nssm.exe"
+ "D:\nodejs\nodered\nssm.exe"
+
+  3 Tạo file khởi động Node-RED. run-nodered.cmd
+  
+  @echo off
+REM fix path
+set PATH=D:\nodejs;%PATH%
+REM Run Node-RED
+node "D:\nodejs\nodered\node_modules\node-red\red.js" -u "D:\nodejs\nodered\work" %*
+
+  4 Cài đặt service a1-nodered
+
+  <img width="1919" height="1008" alt="image" src="https://github.com/user-attachments/assets/48a82335-5b7f-4c08-8932-956a198e7675" />
+  # 3 Tạo CSDL.
+
+
+
+
+
 

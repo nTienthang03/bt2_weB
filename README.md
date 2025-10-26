@@ -201,3 +201,51 @@ Truy cập lại Node-RED
 # 5 Tạo API Backend: Dùng các node http in → function → MSSQL → http response để truy vấn và trả JSON về client.
 
 Tại giao diện Nodered - Flow1: Thực hiện kéo thả các node như sau: http in, http response, MSSQL, function
+ cấu hình http in 
+<img width="818" height="453" alt="image" src="https://github.com/user-attachments/assets/666cd2a7-ad99-4e46-82d6-329d761f0d5a" />
+
+function
+<img width="972" height="705" alt="image" src="https://github.com/user-attachments/assets/433d13e8-1ec8-4631-91cf-34bc399cd18c" />
+
+MSSQL
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f1ed04d2-90c9-4360-a9b8-9ec02b1cb810" />
+
+http response
+
+<img width="772" height="725" alt="image" src="https://github.com/user-attachments/assets/a2dba8e8-5f49-4744-867f-de66f97163de" />
+
+. Thêm node 'Debug'
+
+<img width="765" height="684" alt="image" src="https://github.com/user-attachments/assets/3997e0c3-b98e-418e-ba00-2109fba6f4d6" />
+
+ Nối dây
+ 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/53529d07-bc97-4be9-b67f-5c08000e9bbf" />
+
+2.7. Test API.
+
+<img width="1119" height="513" alt="image" src="https://github.com/user-attachments/assets/dd43b261-46fe-4000-b4d0-861b3ea6a478" />
+
+
+
+# 6Tạo giao diện front-end. 
+
+ tạo 3 file với html.js.css
+<img width="1213" height="491" alt="image" src="https://github.com/user-attachments/assets/f9fbda00-2232-4d1f-b27c-62fd328cf21f" />
+
+ web hiện tại 
+ 
+ <img width="1918" height="1039" alt="image" src="https://github.com/user-attachments/assets/37c3c051-9397-4b65-826f-5f68786f33b4" />
+
+ nhận xét 
+
+Quá trình cài đặt Apache, Node.js, và Node-RED ban đầu khá phức tạp, đặc biệt là cấu hình file httpd.conf và httpd-vhosts.conf cho Apache, cũng như thiết lập service a1-nodered bằng NSSM. Tuy nhiên, sau khi làm theo hướng dẫn từng bước và thử nghiệm nhiều lần, tôi đã nắm được cách vô hiệu hóa IIS, fake domain qua file hosts, và khởi động server bằng lệnh httpd.exe -k start. Việc cài đặt các thư viện Node-RED (như node-red-contrib-mssql-plus, node-red-contrib-telegrambot, v.v.) cũng mất thời gian vì cần kiểm tra phiên bản tương thích, nhưng tôi đã hiểu cách sử dụng lệnh npm install và chỉnh sửa settings.js để bảo mật giao diện admin.
+
+
+
+Tôi đã học được cách thiết kế flow trong Node-RED bằng cách nối các node (http in, function, MSSQL, http response) để tạo API /timkiem. Việc tiền xử lý dữ liệu trong node function và kết nối với database nguyentienthang qua node MSSQL giúp tôi hiểu cách lấy dữ liệu động dựa trên tham số truy vấn (query). Thêm node debug để quan sát giá trị trung gian rất hữu ích trong việc debug. Kiểm tra API qua trình duyệt (http://localhost:1880/timkiem?q=thị) thành công đã giúp tôi tự tin hơn về khả năng lập trình back-end.
+
+
+Tôi nhận ra rằng front-end (dùng HTML, CSS, JS trong nguyentienthang.js) và back-end (API Node-RED) kết nối qua HTTP request (fetch API). Việc gửi GET request với tham số q và nhận JSON từ server, sau đó xử lý để hiển thị danh sách sinh viên trên giao diện, giúp tôi hiểu rõ quy trình client-server. Thêm các yếu tố như loading spinner và xử lý lỗi trong JS đã nâng cao trải nghiệm người dùng, và tôi thấy việc đồng bộ giữa thiết kế giao diện với dữ liệu từ database là một thử thách thú vị nhưng rất đáng học hỏi
+

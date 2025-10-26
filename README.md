@@ -236,12 +236,16 @@ http response
 
  web hiện tại 
  
- <img width="1918" height="1039" alt="image" src="https://github.com/user-attachments/assets/37c3c051-9397-4b65-826f-5f68786f33b4" />
+ <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e3772049-ec3a-44fb-a2a4-e480b2517954" />
+
  
  kết quả tìm kiếm KTPM36
  
+  dữ liệu SQL
+  
  <img width="872" height="331" alt="image" src="https://github.com/user-attachments/assets/8ffcd5b3-0d2a-4c4a-a537-05d2c96cab0d" />
 
+ Kết quả trùng khớp
  
  <img width="1913" height="943" alt="image" src="https://github.com/user-attachments/assets/2651d407-84ee-490b-b453-88d95818c4f4" />
 

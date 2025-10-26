@@ -237,7 +237,15 @@ http response
  web hiện tại 
  
  <img width="1918" height="1039" alt="image" src="https://github.com/user-attachments/assets/37c3c051-9397-4b65-826f-5f68786f33b4" />
+ 
+ kết quả tìm kiếm KTPM36
+ 
+ <img width="872" height="331" alt="image" src="https://github.com/user-attachments/assets/8ffcd5b3-0d2a-4c4a-a537-05d2c96cab0d" />
 
+ 
+ <img width="1913" height="943" alt="image" src="https://github.com/user-attachments/assets/2651d407-84ee-490b-b453-88d95818c4f4" />
+
+ 
  nhận xét 
 
 Quá trình cài đặt Apache, Node.js, và Node-RED ban đầu khá phức tạp, đặc biệt là cấu hình file httpd.conf và httpd-vhosts.conf cho Apache, cũng như thiết lập service a1-nodered bằng NSSM. Tuy nhiên, sau khi làm theo hướng dẫn từng bước và thử nghiệm nhiều lần, tôi đã nắm được cách vô hiệu hóa IIS, fake domain qua file hosts, và khởi động server bằng lệnh httpd.exe -k start. Việc cài đặt các thư viện Node-RED (như node-red-contrib-mssql-plus, node-red-contrib-telegrambot, v.v.) cũng mất thời gian vì cần kiểm tra phiên bản tương thích, nhưng tôi đã hiểu cách sử dụng lệnh npm install và chỉnh sửa settings.js để bảo mật giao diện admin.

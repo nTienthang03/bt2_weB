@@ -121,10 +121,82 @@ node "D:\nodejs\nodered\node_modules\node-red\red.js" -u "D:\nodejs\nodered\work
   4 Cài đặt service a1-nodered
 
   <img width="1919" height="1008" alt="image" src="https://github.com/user-attachments/assets/48a82335-5b7f-4c08-8932-956a198e7675" />
+  
   # 3 Tạo CSDL.
 
+  Mở ứng dụng Microsoft SQL Server Management Studio
 
+Đăng nhập bằng tài khoản của bạn, ví dụ:
 
+Server name: localhost hoặc 127.0.0.1
 
+Authentication: SQL Server Authentication
 
+Login: sa
+
+Password: (mật khẩu bạn đặt khi cài SQL Server)
+
+1 Tạo Database bất kỳ 
+
+<img width="949" height="363" alt="image" src="https://github.com/user-attachments/assets/129e73ec-29c1-4381-816d-1db10ef7fa5c" />
+
+2 Check Ip config 
+
+<img width="974" height="305" alt="image" src="https://github.com/user-attachments/assets/bf514ebc-ea5e-4ff8-a587-93c9da334d5e" />
+
+check port 
+
+# 4Cài đặt thư viện trên nodered.
+
+ Nếu Node-RED đang chạy như service (bạn đã tạo bằng NSSM):
+ 
+Mở trình duyệt → truy cập:
+👉 http://localhost:1880
+Giao diện 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2b4f704d-b14f-4dde-98b6-b7b61a13973e" />
+
+Cài đặt thư viện (node) trong Node-RED
+🧭 Thao tác:
+
+Mở trình duyệt → truy cập: http://localhost:1880
+
+Ở góc phải trên cùng → bấm ☰ (menu)
+
+Chọn Manage palette
+
+Chuyển qua tab Install
+
+Nhập tên từng gói bên dưới 
+
+Node-red-contrib-mssql-plus
+
+ Node-red-node-mysql
+
+ Node-red-contrib-telegrambot
+
+ Node-red-contrib-moment
+
+ node-red-contrib-influxdb
+
+ node-red-contrib-duckdns
+
+  node-red-contrib-cron-plus
+  
+
+→ bấm Install
+3 Sửa file `D:\nodejs\nodered\work\settings.js - > xoá dấu // ở 8 dòng dưới.
+
+<img width="1149" height="391" alt="image" src="https://github.com/user-attachments/assets/9b87641b-5d5e-4c7d-ac96-e92da79f04d5" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/0a08ee53-5745-47ac-8a31-fa459937660d" />
+
+  Sinh mật khẩu mã hoá mới.
+  
+<img width="965" height="340" alt="image" src="https://github.com/user-attachments/assets/70447854-35c0-4351-bba0-b918a5c53fc9" />
+
+Khởi động lại Nodered
+Truy cập lại Node-RED
+
+# 5 Tạo API Backend: Dùng các node http in → function → MSSQL → http response để truy vấn và trả JSON về client.
 
